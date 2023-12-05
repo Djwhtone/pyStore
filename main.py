@@ -9,12 +9,14 @@ def init_Store():
             print("Enter done to finish items.")
             item = input("Enter item: ")
             if item.upper() == "DONE":
-                print("Done was executed! Condition was true")
+                print("\nDone was executed! Condition was true\n")
                 break
+            elif item.isdigit():
+                raise ValueError
             else:
                 kroger.add_items(item)
         except ValueError:
-            print("bad input")
+            print("\nEnter text only!\n")
 
 
     print(kroger)
