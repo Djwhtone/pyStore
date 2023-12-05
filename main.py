@@ -31,7 +31,7 @@ def show_options():
 
 
 def main():
-    print("Hello")
+    print("Changing the header here what happens next")
     show_options()
 
     while True:
