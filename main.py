@@ -2,7 +2,7 @@ from Store import Store
 
 def init_Store():
     name = input("Enter a name: ")
-    kroger = Store(name)
+    h = Store(name)
 
     while True:
         try:
@@ -14,18 +14,18 @@ def init_Store():
             elif item.isdigit():
                 raise ValueError
             else:
-                kroger.add_items(item)
+                h.add_items(item)
         except ValueError:
             print("\nEnter text only!\n")
 
 
-    print(kroger)
-    print("\n")
-    show_options()
+    return h
 
+def display_list(store):
+    print(store.name)
 
 def show_options():
-    print("0 - exit program")
+    print("0 - exit program123")
     print("1 - enter a store with items")
     print("2 - print statement\n")
 
@@ -33,15 +33,24 @@ def show_options():
 def main():
     print("Changing the header here what happens next")
     show_options()
+    store = None
 
     while True:
         try:
+            display_list()
             option = int(input("Select an option: "))
+            
             if option == 1:
                 print("Selected 1")
-                init_Store()
+                store = init_Store()
+                #init_Store()
             elif option == 2:
-                print("Option two was ran")
+                if store:
+                    #store = init_Store
+                    display_list(store)
+                    print("Option two was ran")
+                else:
+                    print("No store entered!!")
             elif option == 0:
                 break
             else:
