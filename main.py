@@ -22,6 +22,7 @@ def init_Store():
     return h
 
 def display_list(store):
+    # returns the name of the store object
     print(store.name)
 
 def show_options():
@@ -29,6 +30,12 @@ def show_options():
     print("1 - enter a store with items")
     print("2 - print statement\n")
 
+def question_user():
+    # Throw the while true loop in the main here
+    # figure out how to recall the store object and its attributes either in the main or keep it in this function
+    # second comment raises question as to how to the object for other fuction user
+    # implement a database
+    print(f'undefined function')
 
 def main():
     print("Changing the header here what happens next")
@@ -37,9 +44,8 @@ def main():
 
     while True:
         try:
-            display_list()
             option = int(input("Select an option: "))
-            
+
             if option == 1:
                 print("Selected 1")
                 store = init_Store()
